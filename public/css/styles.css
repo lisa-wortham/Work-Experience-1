@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-v20-latin-regular.woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* Calico Media marketing site */
 
 :root {
@@ -282,8 +291,10 @@ img {
 
 .hero-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
+  max-height: 500px;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
   border-radius: var(--radius);
   display: block;
 }
@@ -415,8 +426,9 @@ img {
 .feature-media img {
   display: block;
   width: 100%;
+  height: 350px;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: var(--radius);
 }
 
@@ -424,7 +436,7 @@ img {
 
 .playbook-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
 }
 
@@ -495,8 +507,9 @@ img {
 .cta-band img {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 21 / 8;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .cta-body {
@@ -765,7 +778,15 @@ img {
 }
 
 /* MEDIA SMALL SCREENS */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1100px) {
+  .hero-media .hero-image {
+    width: 100%;
+    height: 280px;
+    max-height: 280px;
+    object-fit: cover;
+    object-position: center 65%;
+    border-radius: 16px;
+  }
   .site-header--home .container {
     display: flex;
     flex-wrap: nowrap;
@@ -777,8 +798,7 @@ img {
     width: 100%;
   }
 
-  ,
-  site-header--home .logo {
+  .site-header--home .logo {
     margin: 0 auto;
   }
   .site-header--home .nav-links {
@@ -856,6 +876,16 @@ img {
     flex-shrink: 1;
   }
 
+  .hero-media .hero-image {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center 65%;
+    margin: 0 auto;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -865,7 +895,9 @@ img {
     display: block;
     width: 100%;
     max-width: 500px;
-    height: auto;
+    height: 250px !important;
+    object-fit: cover;
+    object-position: center 65%;
     margin: 0 auto;
   }
 
