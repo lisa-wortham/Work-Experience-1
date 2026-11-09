@@ -764,6 +764,13 @@ img {
   padding-top: 24px;
 }
 
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  overflow: hidden;
+}
+
 /* MEDIA SMALL SCREENS */
 @media (min-width: 769px) and (max-width: 1024px) {
   .site-header--home .container {
@@ -777,7 +784,7 @@ img {
     width: 100%;
   }
 
-  ,
+  
   site-header--home .logo {
     margin: 0 auto;
   }
