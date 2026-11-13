@@ -783,6 +783,13 @@ img {
   padding-top: 24px;
 }
 
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  overflow: hidden;
+}
+
 /* MEDIA SMALL SCREENS */
 @media (min-width: 769px) and (max-width: 1100px) {
   .hero-media .hero-image {
