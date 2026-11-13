@@ -14,8 +14,9 @@ app.post('/contact', (req, res) => {
     return res.json({ ok: true});
   }
   const formLoadedAt = Number(req.body.formLoadedAt);
-
+ 
   if(
+    !formLoadedAt ||
     !Number.isFinite(formLoadedAt) ||
     formLoadedAt > Date.now() ||
     Date.now() - formLoadedAt < 3000
